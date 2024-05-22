@@ -22,17 +22,15 @@ export class Ball implements BallPattern {
     }
 
     update(correction: number) {
-        if (this.y+this.radius>canvas.height) {
+        if (this.y+this.radius+this.deltaY*correction>canvas.height) {
             this.deltaY = -this.deltaY*friction;
         } else {
              this.deltaY += gravity;
         }
  
-        if (this.x+this.radius+this.deltaX>canvas.width || this.x - this.radius<=0) {
+        if (this.x+this.radius+this.deltaX>canvas.width || this.x-this.radius-this.deltaX<=0) {
              this.deltaX *= -1;
- 
         }
- 
         this.x += this.deltaX;
         this.y += this.deltaY*correction;
         this.draw()
