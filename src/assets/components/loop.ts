@@ -3,11 +3,13 @@ import { BallPattern } from "../interfaces/balls";
 
 export class Loop {
     deltaTime: number;
-    lastUpdate:number;
+    lastUpdate: number;
+    balls: Array<BallPattern>
 
     constructor(balls: Array<BallPattern>) {
       this.deltaTime = 0;
       this.lastUpdate = 0;
+      this.balls = balls;
 
       this.animate = this.animate.bind(this);
       this.animate();
@@ -18,7 +20,7 @@ export class Loop {
   
       this.deltaTime = currentTime - this.lastUpdate;
       
-      //this.balls.forEach(ball=>ball.update(this.deltaTime/1000))
+      this.balls.forEach(ball=>ball.update(this.deltaTime/1000))
       
       this.lastUpdate = currentTime;
     }
