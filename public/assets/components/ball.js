@@ -1,6 +1,6 @@
 import { canvas, context } from "../components/canvas.js";
 const gravity = 1;
-const friction = 0.59;
+const friction = 0.69;
 export class Ball {
     constructor(x, y, deltaX, deltaY, radius, color) {
         this.x = x;

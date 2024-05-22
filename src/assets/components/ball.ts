@@ -2,7 +2,7 @@ import { BallPattern } from "../interfaces/balls";
 import { canvas, context } from "../components/canvas.js";
 
 const gravity: number = 1;
-const friction: number = 0.59;
+const friction: number = 0.69;
 
 export class Ball implements BallPattern {
     x: number;
